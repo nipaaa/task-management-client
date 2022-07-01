@@ -7,6 +7,7 @@ const Calender = () => {
     return (
         
         <div className='bg-violet-300 py-16'>
+            <h1 className='text-center text-3xl py-6 text-violet-900'>Calender</h1>
             <div className='flex justify-center'>
             <DayPicker mode="single"
                 selected={selected}
