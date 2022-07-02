@@ -11,10 +11,11 @@ const Home = () => {
         const task = event.target.task.value;
         const item = {
             task: task,
+            checked: 'no'
         }
 
 
-        const url = 'http://localhost:5000/task';
+        const url = 'https://friendly-smarties-62853.herokuapp.com/task';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -35,7 +36,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        const url = 'http://localhost:5000/task';
+        const url = 'https://friendly-smarties-62853.herokuapp.com/task';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -56,13 +57,13 @@ const Home = () => {
             </div>
 
             <div className='w-1/2 mx-auto p-6 border my-12'>
-            <p className='text-violet-900 text-2xl'>To-do List</p>     <hr />
+                <p className='text-violet-900 text-2xl'>To-do List</p>     <hr />
                 {
-                    tasks.map(i=> <li key={i._id}>{i.task}</li>)
+                    tasks.map(i => <li key={i._id}>{i.task}</li>)
                 }
-               
-           
-            
+
+
+
             </div>
 
         </div>
