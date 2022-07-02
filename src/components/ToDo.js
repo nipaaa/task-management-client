@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import UpdateModal from './UpdateModal';
 
 const ToDo = () => {
     const [tasks, setTasks] = useState([]);
@@ -20,22 +21,27 @@ const ToDo = () => {
         <div className='bg-violet-300 py-16'>
             <h1 className='text-center text-violet-900 text-3xl pb-8'>Added Task</h1>
             <div className='border w-2/5 mx-auto p-12'>
-                <div class="form-control">
-                    <label class="">
+                <div>
+                    <div class="">
 
                         {
                             tasks.map(item => <div>
-                                <div className='flex items-center my-4'>
+                                <div className='flex justify-between items-center my-4'>
+                                    <div className='flex items-center'>
                                     <input type="checkbox" class="checkbox checkbox-primary mr-6" />
                                     <span key={item._id} class="label-text">{item.task}</span>
+                                </div>
+                                    
+                                    <i onClick={()=>setTasks(tasks)} class="fa-solid fa-pen-to-square text-violet-900"></i>
                                 </div>
                             </div>
                             )
                         }
 
-                    </label>
+                    </div>
                 </div>
             </div>
+            {tasks && <UpdateModal task={tasks} setTask={setTasks}></UpdateModal>}
         </div>
     );
 };

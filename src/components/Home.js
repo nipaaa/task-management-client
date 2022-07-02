@@ -50,7 +50,7 @@ const Home = () => {
                 <h1 className='text-violet-900 text-3xl'>Add Your task Here</h1> <br />
                 <form onSubmit={handleTask}>
                     <input type="text" placeholder="Type here and press enter button" name='task' class="input input-bordered input-primary w-full max-w-xs" />
-                    <input type="submit" value="Submit" />
+                    <input className='bg-violet-900 text-white p-3 border rounded-lg' type="submit" value="Submit" />
                 </form>
 
             </div>
